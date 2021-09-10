@@ -75,3 +75,63 @@ select al.title "Album Title", ar.name "Artist Name"
 from album al
 join artist ar
 on al.artist_id = ar.artist_id;
+
+
+=============================================================================================================================================
+--EXTRA CREDIT--
+
+-- Problem 1
+select * from artist
+order by name desc limit(10);
+
+-- Problem 2
+select * from artist
+where name like 'Black%';
+
+-- Problem 3
+select * from artist
+where name like '%Black%';
+
+-- Problem 4
+select max(birth_date) from employee;
+ --OR--
+select * from employee
+order by birth_date desc limit(1);
+
+-- Problem 5
+select min(birth_date) from employee;
+--OR--
+select * from employee
+order by birth_date limit(1);
+
+-- Problem 6
+select count(*) from invoice
+where billing_state in ('CA','TX','AZ');
+
+-- Problem 7
+select avg(total) from invoice;
+
+-- Problem 8
+select pt.track_id "Track Id", p.name "Playlist Name"
+from playlist_track pt
+join playlist p on p.playlist_id = pt.playlist_id
+where p.name = 'Music';
+
+-- Problem 9
+select t.name "Track Name", t.track_id "Track Id", p.playlist_id "Playlist Id"
+from track t
+join playlist_track p
+on p.track_id = t.track_id
+join playlist pl
+on pl.playlist_id = p.playlist_id
+where p.playlist_id = 5;
+
+-- Problem 10
+select t.name "Track Name", pl.name "Playlist Name"
+from track t
+join playlist_track p 
+on p.track_id = t.track_id
+join playlist pl
+on pl.playlist_id = p.playlist_id;
+
+-- Problem 11
