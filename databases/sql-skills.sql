@@ -135,3 +135,10 @@ join playlist pl
 on pl.playlist_id = p.playlist_id;
 
 -- Problem 11
+select t.name "Track Name", a.title "Album Title", g.genre_id "Genre"
+from track t
+join album a
+on a.album_id = t.album_id
+join genre g
+on g.genre_id = t.genre_id
+where g.name = 'Alternative & Punk';

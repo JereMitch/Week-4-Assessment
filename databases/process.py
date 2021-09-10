@@ -10,3 +10,15 @@ def sales_reports(log_file):    #Creating/Naming a function that reaches into th
 
 
 sales_reports(log_file)         #calling the function
+
+
+log_file.seek(0)
+
+def melons_sold():
+    for melon in log_file:
+        melon = melon.rstrip()
+        num = melon[2]
+        if num >= 10:
+            print(melon)
+
+melons_sold()
